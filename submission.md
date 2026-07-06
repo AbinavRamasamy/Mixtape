@@ -85,6 +85,12 @@ sequenceDiagram
 - **Association tables carry metadata inconsistently.** `song_tags` and `friendships` are pure link tables (just the two FKs). `playlist_entries` is richer — `position`, `added_by`, `added_at` — because playlist order/attribution matters in a way tags and friendships don't.
 - **IDs are UUID strings everywhere** (`generate_uuid()` default), not auto-increment ints — consistent across all 7 models.
 
+## Commit History
+
+Five fix commits on `bugfix/mixtape`, one per bug, merged into `main`:
+
+![git log of bugfix/mixtape branch](assets/git_log.png)
+
 ## Bug Root-Cause Analysis
 
 ### Bug 1 — streak keeps resetting (`streak_service.py`)
