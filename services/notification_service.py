@@ -104,7 +104,7 @@ def rate_song(user_id: str, song_id: str, score: int) -> Rating:
     else:
         rating = Rating(user_id=user_id, song_id=song_id, score=score)
         db.session.add(rating)
-        
+
         if song.shared_by != user_id:
             create_notification(
                 user_id=song.shared_by,
